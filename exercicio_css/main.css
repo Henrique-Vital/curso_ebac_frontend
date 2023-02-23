@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+body header {
+    background-color: #2f3640;
+    padding: 16px 0;
+    color:  #f5f6fa;
+}
+header.conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header li {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+header li a {
+    color: #f5f6fa;
+    text-decoration: none;
+}
+
+#titulo {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+.conteiner {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.articles article img {
+    /* height: 180px; */
+    width: 100%;
+}
+
+.articles article {
+    width: 30%;
+}
+
+section {
+    padding: 16px 0;
+}
+
+section h2,
+.aricles article {
+    margin-bottom: 16px;
+}
+
+.articles article h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.articles article a {
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.articles article a:hover {
+    text-decoration: underline;
+}
+
+.articles article p,
+.articles article a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.article article h3 {
+    font-size: 24px;
+}
+
+section h2 {
+    font-size: 32px;
+}
+
+#sports {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#sports.aricles article a {
+    background-color: #009432;
+}
+
+#economy {
+    background-color: #f8f59f;
+}
+
+#economy .aricles article a {
+    background-color: #ff9f1a;
+}
+
+#entrete {
+    background-color:rgb(0, 153, 255);
+}
+
+#entrete .aricles article a {
+    background-color:rgb(0, 153, 255);
+}
+
+#tecn {
+    background-color: rgba(255, 255, 255, 0.747);
+}
+
+#tecn .aricles article a {
+    background-color: rgba(255, 255, 255, 0.829);
+}
