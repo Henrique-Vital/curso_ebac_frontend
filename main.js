@@ -32,7 +32,7 @@ $(document).ready(function(){
             celular: 'Por favor, insira o numero do seu celular',
             cpf: 'Por favor, insira o numero do seu cpf',
             endereco: 'Por favor, insira o seu endereço',
-            cep: 'Por favor, insira o numero do seu cep',
+            cep: 'Por favor, insira o numero do seu cep'
         },
         submitHandler: function(form) {
             console.log(form)
