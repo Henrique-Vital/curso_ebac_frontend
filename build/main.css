@@ -5,6 +5,53 @@
   font-family: Roboto, sans-serif;
 }
 
+section {
+  padding: 56px 0;
+}
+
+.products {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 32.66%);
+  column-gap: 1%;
+  row-gap: 4%;
+  width: 100%;
+}
+.products .product-item img {
+  width: 100%;
+  border-radius: 16px;
+}
+.products .product-item .product-button {
+  display: block;
+  background-color: #44bd32;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 8px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+.products .product-item .product-button:hover {
+  background-color: #75c960;
+}
+
+@media screen and (max-width: 1023px) {
+  section .container {
+    max-width: 80%;
+  }
+  section .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+  }
+}
+@media screen and (max-width: 767px) {
+  section .products {
+    display: block;
+  }
+  .product-item {
+    margin-bottom: 32px;
+  }
+}
 body {
   background-color: #f5f6fa;
 }
@@ -25,7 +72,7 @@ header {
   top: 0;
   left: 0;
 }
-.container header {
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,53 +88,6 @@ header .menu li {
 header .menu li a {
   color: #f5f6fa;
   text-decoration: none;
-}
-
-section {
-  padding: 56px 0;
-}
-section .products {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 32.66%);
-  column-gap: 1%;
-  row-gap: 4%;
-  width: 100%;
-}
-section .products .product-item img {
-  width: 100%;
-  border-radius: 16px;
-}
-section .products .product-button {
-  display: block;
-  background-color: #44bd32;
-  color: #f5f6fa;
-  text-align: center;
-  padding: 8px 0;
-  border-radius: 8px;
-  margin-top: 8px;
-  text-decoration: none;
-}
-section .products .product-button:hover {
-  background-color: #4cd137;
-}
-
-@media screen and (max-width: 1023px) {
-  .container {
-    max-width: 80%;
-  }
-  .products {
-    grid-template-columns: repeat(2, 48.5%);
-    column-gap: 3%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .products {
-    display: block;
-  }
-  .product-item {
-    margin-bottom: 32px;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
