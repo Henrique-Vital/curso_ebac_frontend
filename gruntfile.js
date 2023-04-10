@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    // Configuração das tarefas
+    
     grunt.initConfig({
       less: {
         development: {
@@ -28,11 +28,11 @@ module.exports = function(grunt) {
       }
     });
   
-    // Carrega os plugins que provêm as tarefas
+    
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
   
-    // Registra as tarefas
+    
     grunt.registerTask('default', ['less', 'uglify']);
   
   };
