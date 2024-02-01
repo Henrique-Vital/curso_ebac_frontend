@@ -1,43 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta CEP</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="mais.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Busca CEP</title>
+        <link rel="shortcut icon" href="https://buscacepinter.correios.com.br/core/templates/bunker/img/favi-ect.png">
+        <link rel="stylesheet" href="https://buscacepinter.correios.com.br/core/templates/bunker/css/bunker.css?1">
+        <link rel="stylesheet" href="https://buscacepinter.correios.com.br/static/css/global.css?1">    
+        <link rel="stylesheet" href="https://buscacepinter.correios.com.br/app/index.css?1">
+        <link rel="stylesheet" href="https://buscacepinter.correios.com.br/app/consulta/css/detalhes-cep.css?1">
+        <link rel="stylesheet" href="https://buscacepinter.correios.com.br/app/consulta/css/modal-consulta.css?1">   
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    </head>
 <body class="bg-light">
-    <div class="container mt-5">
-        <h1 class="mb-4">Consultando CEP</h1>
-        <form>
-            <div class="form-group">
-                <label for="cep">CEP</label>
-                <input type="text" class="form-control" maxlength="9" id="cep">
-                <small>00000-000</small>
-            </div>
-            <div class="form-group">
-                <label for="logradouro">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro">
-                <small>Rua.</small>
-            </div>
-            <div class="form-group">
-                <label for="bairro">Bairro</label>
-                <input type="text" class="form-control" id="bairro">
-                <small>Bairro</small>
-            </div>
-            <div class="form-group">
-                <label for="localidade">Localidade</label>
-                <input type="text" class="form-control" id="localidade">
-                <small>Cidade</small>
-            </div>
-            <div class="form-group">
-                <label for="uf">UF</label>
-                <input type="text" class="form-control" id="uf">
-                <small>Estado</small>
-            </div>
-        </form>
+    <div id="acessibilidade"> 
+        <a id="btnAcessibilidade" accesskey="c" class="">Acessibilidade</a> 
+        <a class="idioma">Português</a>
     </div>
-    <script src="src/js/main.js"></script>
+    <section id="menu">
+        <a class="hamburger">&nbsp;.</a>
+        <a class="logo"> <alt="logomarca dos="" correios"=""> </alt="logomarca></a>     
+        <a class="pesquisar">&nbsp;.</a> 
+        <div class="menu oculto" style="height: 698px;">
+                <section>            
+                    <h1>Busca CEP </h1>  
+                </section>
+                <a href="https://buscacepinter.correios.com.br/app/index.php" tabindex="1">Voltar ao menu</a>
+                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" tabindex="1">Por Endereço ou CEP</a>
+                <a href="https://buscacepinter.correios.com.br/app/localidade_logradouro/index.php" tabindex="1">Por Localidade/Logradouro</a>
+                <a href="https://buscacepinter.correios.com.br/app/cep/index.php" tabindex="1">Por CEP</a>  
+                <a href="https://buscacepinter.correios.com.br/app/logradouro_bairro/index.php" tabindex="1">Logradouro por Bairro</a>
+                <a href="https://buscacepinter.correios.com.br/app/faixa_cep_uf_localidade/index.php" tabindex="1">Faixa de CEP por UF/Localidade</a>
+                <a href="https://buscacepinter.correios.com.br/app/caixa_postal/index.php" tabindex="1">Caixa Postal</a>
+                <a href="https://buscacepinter.correios.com.br/app/clique_retire/index.php" tabindex="1">Clique e Retire</a> 
+                <a href="https://buscacepinter.correios.com.br/app/locker/index.php" tabindex="1">Locker</a>
+                <a href="https://buscacepinter.correios.com.br/app/agencia_modular/index.php" tabindex="1">Agência Modular</a>
+                <a tabindex="1">Veja Também</a>
+                <div><a class="voltar" tabindex="-1">Voltar</a>
+                    <a href="https://www.correios.com.br/enviar/precisa-de-ajuda/tudo-sobre-cep" tabindex="-1">Tudo sobre CEP</a>
+                    <a href="https://www.upu.int/UPU/media/upu/files/postalSolutions/programmesAndServices/postalSupplyChain/customs/listCustomsProhibitedArticlesEn.pdf" tabindex="-1">CEP de outros Países</a>
+                    <a href="https://buscacepinter.correios.com.br/app/veja_tambem/sobre/index.php" tabindex="-1">Sobre</a>
+                </div>
+        </div>
+    </section>
+    <main>        
+        <div id="trilha">
+            <a>Portal Correios</a>
+            <a><b>Busca por CEP</b></a>
+        </div>           
+        <form novalidate="">    
+            <div id="painel_form_consulta" class="container">
+                <div>
+                    <div class="form" id="formulario">    
+                        <input name="pagina" id="pagina" type="hidden" value="/app/endereco/index.php">
+                        <input name="cepaux" id="cepaux" type="hidden" value="">                
+                        <input name="mensagem_alerta" id="mensagem_alerta" type="hidden" value="">
+                        <div class="campos">  
+                            <div class="campos">
+                                <div id="titulo_tela">
+                                    <h2>Busca CEP</h2>
+                                </div>                        
+                            </div>    
+                        </div>
+                        <section id="inicioConteudo">
+                            <form>
+                                <div class="form-group mb-4" >
+                                    <label for="cep"></label>
+                                    <input type="text" class="form-control" maxlength="9" id="cep">
+                                    <small>CEP Digitar conforme o modelo 00000-000</small>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="text" class="form-control" id="logradouro">
+                                    <small>Logradouro</small>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="text" class="form-control" id="bairro">
+                                    <small>Bairro</small>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="text" class="form-control" id="localidade">
+                                    <small>Cidade</small>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="text" class="form-control" id="uf">
+                                    <small>Estado</small>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </form>  
+    </main>
+</body>      
+<script src="src/js/main.js"></script>
 </body>
 </html>
